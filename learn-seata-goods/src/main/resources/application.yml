@@ -1,0 +1,18 @@
+server:
+  port: 12349
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:12348/eureka
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.88.129:3306/ellen_shop?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC
+    username: ellen
+    password: ellen
+  application:
+    name: service-goods # 将来会做作为微服务的名称
+  cloud:
+    alibaba:
+      seata:
+        tx-service-group: order_cut_goods_tx_group
